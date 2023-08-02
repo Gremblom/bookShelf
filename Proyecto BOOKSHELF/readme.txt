@@ -3,3 +3,5 @@ Dependencias utilizadas
     ; dotenv
     ; express
     ; mongoose
+    ; express-validator
+    ; bcryptjs

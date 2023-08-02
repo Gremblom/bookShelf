@@ -13,6 +13,16 @@ const usuarioschema = Usuario.Schema({
     password : {
         type : String,
         required : true
+    },
+    rol : {
+        type : String,
+        default : "USER",
+        enum : ["USER", "ADMIN"]
+    },
+    estado : {
+        type : Boolean,
+        default : true,
+        enum : [true, false]
     }
 });
 
