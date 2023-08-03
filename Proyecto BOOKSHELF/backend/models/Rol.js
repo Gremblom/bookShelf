@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const rolSchema = mongoose.Schema({
     rol : {
-        type : Boolean,
+        type : String,
         required : true,
         enum : ["USER", "ADMIN"]
     }

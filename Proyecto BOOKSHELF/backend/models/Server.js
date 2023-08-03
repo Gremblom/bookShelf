@@ -1,7 +1,11 @@
 import express from "express";
 import cors from "cors";
+
 import conexion from "../database/connection.js";
 import libroRouter from "../routes/libros.router.js";
+import usuariosRouter from "../routes/usuarios.router.js";
+import authRouter from "../routes/auth.router.js";
+import favRouter from "../routes/favoritos.router.js";
 
 class Server {
 
@@ -17,7 +21,10 @@ class Server {
         this.conexion = conexion();
 
         this.rutas = {
-            libros : "/libros"
+            libros : "/libros",
+            usuarios : "/usuarios",
+            auth : "/auth",
+            fav : "/fav"
         }
         this.routes();
         this.port = process.env.PORT;
@@ -36,6 +43,9 @@ class Server {
 
     routes(){
         this.app.use(this.rutas.libros, libroRouter);
+        this.app.use(this.rutas.usuarios, usuariosRouter);
+        this.app.use(this.rutas.auth, authRouter);
+        this.app.use(this.rutas.fav, favRouter);
     }
 }
 

@@ -18,7 +18,9 @@ const postUsuarios = async (req, res)=>{
         const salt = bcryptjs.genSaltSync();
         newDato.password = bcryptjs.hashSync(password, salt);
 
-        await newDato.save();        
+        await newDato.save();
+
+        res.status(201).json(newDato);
     } catch (error) {
         console.log(error);
     }
