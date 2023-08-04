@@ -1,5 +1,6 @@
 import Rol from "../models/Rol.js";
 import Usuario from "../models/Usuario.js";
+import Favorito from "../models/Favorito.js";
 
 const isValidRol = async (rol = '')=>{
     const existeRol = await Rol.findOne({rol});
@@ -25,8 +26,17 @@ const usuarioExiste = async (id)=>{
     }
 }
 
+const favoritoExiste = async (id)=>{
+    const favoritoExiste = await Favorito.findOne({_id : id});
+
+    if (!favoritoExiste){
+        throw new Error(`El favorito que está tratando de buscar no existe`);
+    }
+}
+
 export {
     isValidRol,
     existeEmail,
-    usuarioExiste
+    usuarioExiste,
+    favoritoExiste
 }

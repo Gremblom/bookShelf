@@ -1,5 +1,20 @@
 import Favorito from "../models/Favorito.js";
 
+const getFavoritos = async (req, res)=>{
+    try {
+        const {id} = req.params;
+
+        const favoritos = await Favorito.find({
+            "usuario" : {$in : [id]},
+            "estado" : {$in : [true]}
+        });
+
+        res.json(favoritos);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const postFavorito = async (req, res)=>{
     try {
         const {libro} = req.body;
@@ -18,6 +33,20 @@ const postFavorito = async (req, res)=>{
     }
 }
 
+const deleteFavorito = async (req, res)=>{
+    try {
+        const {id} = req.params;
+
+        const dato = await Favorito.findByIdAndUpdate(id, {estado : false});
+
+        res.json(dato);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export {
-    postFavorito
+    getFavoritos,
+    postFavorito,
+    deleteFavorito
 }

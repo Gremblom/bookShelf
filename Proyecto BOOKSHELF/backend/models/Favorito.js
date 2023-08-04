@@ -9,6 +9,10 @@ const favoritoSchema = mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         ref : 'Libro',
         required : true
+    }, estado : {
+        type : Boolean,
+        default : true,
+        enum : [true, false]
     }
 });
 
