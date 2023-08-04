@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: 100vh;
+}
+
+.loginBackground{
+    background-image: url(../img/registerLoginBackgroun.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formBackground{
+    display: grid;
+    grid-template-rows: 25% 75%;
+}
+
+#logoDiv{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#logoDiv img{
+    height: 20rem;
+    width: 20rem;
+}
+
+#formDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10rem;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 85%;
+    border-radius: 2.5rem;
+    background: linear-gradient(#5C364F, #9C5151);
+}
+
+form {
+    height : 85%;
+    width : 85%;
+}
+
+#loginForm{
+    height : 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    color: white;
+}
+
+#formLabels{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    font-size: 2rem;
+}
+#formLabels div{
+    display: flex;
+    flex-direction: column;
+}
+
+#formLabels div input{
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+#formSend{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formSend input{
+    margin-bottom: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+}
+
+#formSend p{
+    margin: 0;
+}
+
+#formSend p a{
+    color: blue;
+    text-decoration: underline;
+}
+
+#formContainer button{
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+#formContainer button a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+}
