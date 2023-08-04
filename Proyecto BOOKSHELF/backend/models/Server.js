@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors";
+import fileUpload from "express-fileupload";
 
 import conexion from "../database/connection.js";
 import libroRouter from "../routes/libros.router.js";
 import usuariosRouter from "../routes/usuarios.router.js";
 import authRouter from "../routes/auth.router.js";
 import favRouter from "../routes/favoritos.router.js";
+import searchRouter from "../routes/search.router.js";
+import uploadRouter from "../routes/upload.router.js";
 
 class Server {
 
@@ -24,7 +27,9 @@ class Server {
             libros : "/libros",
             usuarios : "/usuarios",
             auth : "/auth",
-            fav : "/fav"
+            fav : "/fav",
+            search : "/search",
+            uploads : "/uploads"
         }
         this.routes();
         this.port = process.env.PORT;
@@ -39,6 +44,10 @@ class Server {
     middlewares(){
         this.app.use(express.json());
         this.app.use(cors(this.configCors));
+        this.app.use(fileUpload({
+            useTempFiles : true,
+            tempFileDir : '/tmp'
+        }));
     }
 
     routes(){
@@ -46,6 +55,8 @@ class Server {
         this.app.use(this.rutas.usuarios, usuariosRouter);
         this.app.use(this.rutas.auth, authRouter);
         this.app.use(this.rutas.fav, favRouter);
+        this.app.use(this.rutas.search, searchRouter);
+        this.app.use(this.rutas.uploads, uploadRouter);
     }
 }
 

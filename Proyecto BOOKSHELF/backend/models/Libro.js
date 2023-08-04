@@ -16,6 +16,11 @@ const libroSchema = mongoose.Schema({
     calificacion : {
         type : Number,
         required : true
+    },
+    estado : {
+        type : Boolean,
+        default : true,
+        enum : [true, false]
     }
 },
 {
