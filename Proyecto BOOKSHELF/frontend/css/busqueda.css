@@ -69,8 +69,28 @@ body{
 }
 
 .body{
+    margin: 0.5rem;
     display: flex;
     flex-direction: column;
+}
+
+#searchbar{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    row-gap: 1rem;
+}
+
+#searchbar input{
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.5rem;
+}
+
+#searchbar div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 #cardsContainer{

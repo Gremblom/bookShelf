@@ -69,8 +69,49 @@ body{
 }
 
 .body{
+    margin: 0.5rem;
     display: flex;
     flex-direction: column;
+}
+
+#usuarioInfo{
+    display: grid;
+    grid-template-rows: 20% 80%;    
+}
+
+#banner{
+    width: 100%;
+    background-image: url(../img/logo.png);
+    margin-bottom: 0;
+}
+
+#userInfo{
+    margin-top: 0;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#profilePicture img{
+    height: 10rem;
+    width: 10rem;
+}
+
+#nameAndNavbar{
+    display: flex;
+    flex-direction: column;
+}
+
+#navBar ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    column-gap: 1.5rem;
+}
+
+#navBar ul li img{
+    width: 2rem;
+    height: 2rem;
 }
 
 #cardsContainer{
@@ -95,29 +136,8 @@ body{
     background: linear-gradient(#A74444, #FF6868);
 }
 
-#sponsors{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sponsorImg img{
-    height: 15rem;
-    width: 20rem;
-}
-
-#bestBooksContainer{
-    display: flex;
-    flex-direction: column;
-}
-
-#bestScoreCard{
+#favoritos{
     display: flex;
     flex-direction: row;
-    align-items: center;
-}
-
-#bestScoreCard img{
-    width: 2rem;
-    height: 2rem;
+    align-items: center;    
 }
