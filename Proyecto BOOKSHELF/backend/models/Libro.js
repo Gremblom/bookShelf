@@ -9,12 +9,12 @@ const libroSchema = mongoose.Schema({
         type : String,
         required : true
     },
-    reseña : {
+    autor : {
         type : String,
         required : true
     },
-    calificacion : {
-        type : Number,
+    sinopsis : {
+        type : String,
         required : true
     },
     estado : {

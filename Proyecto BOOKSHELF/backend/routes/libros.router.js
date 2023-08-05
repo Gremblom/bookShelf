@@ -4,12 +4,9 @@ import {getDatos, getOne, postDatos, updateDatos, delDatos} from "../controllers
 
 const router = express.Router();
 
-router.get("/all", getDatos);
-router.get("/one/:id", getOne);
-router.post("/", [
-
-], postDatos);
-router.patch("/upd/:id", updateDatos);
-router.delete("/del/:id", delDatos);
+router.get("/", getDatos);
+router.get("/:id", getOne);
+router.post("/", postDatos);
+router.delete("/:id", delDatos);
 
 export default router;
