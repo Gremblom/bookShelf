@@ -69,16 +69,37 @@ body{
 }
 
 .body{
+    margin: 0.5rem;
     display: flex;
     flex-direction: column;
 }
 
-#cardsContainer{
+#searchbar{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    row-gap: 1rem;
+}
+
+#searchbar input{
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.5rem;
+}
+
+#searchbar div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardsContainer{
     display: block;
     margin: 0 auto;
     text-align: center;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    white-space: normal;
 }
 
 .cardScroll{
@@ -167,10 +188,44 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .bookSummary h5{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 1.5rem;
+}
+
+.userProfile img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.userRating{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.userRating img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.username{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.userInfo{
+    display: flex;
+    justify-content: center;
+}
+
+#topMenu{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
 }

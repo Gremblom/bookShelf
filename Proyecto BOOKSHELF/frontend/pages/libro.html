@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kameron&family=Oswald:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/generalStyles.css">
-    <link rel="stylesheet" href="../css/busqueda.css">
+    <link rel="stylesheet" href="../css/libro.css">
     <title>BookShelf</title>
 </head>
 <body>
@@ -16,7 +16,8 @@
             <img src="../img/logoletter.png" alt="logoletter.png">
         </div>
         <div id="navbar">
-            <img src="../img/logoletter.png" alt="logoletter.png">
+            <a href="./home.html"><img src="../img/house.png" alt="logoletter.png"></a>
+            <a href="./busqueda.html"><img src="../img/lupa.png" alt="logoletter.png"></a>
         </div>
         <div id="user">
             <img src="../img/logoletter.png" alt="logoletter.png">
@@ -26,17 +27,20 @@
         <h1>BookShelf</h1>
         <div id="leftSideNavBar">
             <ul>
-                <li><img src="../img/logoletter.png" alt="guardado.png">Guardados</li>
-                <li><img src="../img/logoletter.png" alt="amigos.png">Amigos</li>
+                <li><img src="../img/guardado.png" alt="guardado.png"><a href="./usuario.html">Guardados</a></li>
+                <li><img src="../img/friends.png" alt="amigos.png"><a href="./usuario.html">Amigos</a></li>
             </ul>
         </div>
     </section>
     <section class="body">
-        <h2>Book Title</h2>
-        <div>
-            
+        <div id="topMenu">
+            <button><<</button>
+            <h2 id="bookTitle">Book Title</h2>
         </div>
-        <div id="cardsContainer">
+        <div class="bookContainer">
+        </div>
+        <h2>Reseñas</h2>
+        <div class="cardsContainer">
         </div>
     </section>
     <section class="rightColumn">
@@ -49,14 +53,6 @@
         <div id="bestBooks">
             <h2>Mejor Calificados</h2>
             <div id="bestBooksContainer">
-                <div id="bestScoreCard">
-                    <img class="bestScoreCard" src="../img/logoletter.png" alt="img.png">
-                    <p>Example</p>
-                </div>
-                <div id="bestScoreCard">
-                    <img class="bestScoreCard" src="../img/logoletter.png" alt="img.png">
-                    <p>Example</p>
-                </div>
             </div>
         </div>
     </section>

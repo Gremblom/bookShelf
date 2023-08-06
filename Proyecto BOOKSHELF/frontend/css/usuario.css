@@ -114,9 +114,9 @@ body{
     height: 2rem;
 }
 
-#cardsContainer{
+.cardsContainer{
     display: block;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -127,6 +127,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .rightColumn{
@@ -140,4 +142,57 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;    
+}
+
+#favoritos img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.cardBody{
+    border-style: dashed;
+    border-color: #B2B0FF; 
+    display: flex;
+    flex-direction: column;
+}
+
+.cardLeftPart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardLeftPart img{
+    width: 4rem;
+    height: 2rem;
+}
+
+.userRating{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.userRating img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.bookReviewTitle{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.userInfo{
+    display: flex;
+    justify-content: center;
+}
+
+.friendCardBody{
+    border-style: dashed;
+    border-color: #B2B0FF; 
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
 }
