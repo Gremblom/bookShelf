@@ -9,7 +9,8 @@ const favoritoExists = async (req, res, next)=>{
 
     if (libroExiste && usuarioExiste){
         return res.status(400).json({
-            msg : "Este usuario ya agregó este libro a su lista de favoritos"
+            msg : "Este usuario ya agregó este libro a su lista de favoritos",
+            register : false
         });
     }
     next();

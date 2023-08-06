@@ -1,6 +1,6 @@
 import express from "express";
 
-import {getDatos, getOne, postDatos, updateDatos, delDatos} from "../controllers/libros.controller.js";
+import {getDatos, getOne, postDatos, delDatos} from "../controllers/libros.controller.js";
 
 const router = express.Router();
 

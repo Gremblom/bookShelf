@@ -8,7 +8,8 @@ const validateJWT = async (req = request, res = response, next)=>{
 
     if (!token){
         return res.status(400).json({
-            msg : "Se requiere un jsonwebtoken"
+            msg : "Se requiere un jsonwebtoken",
+            validToken : false
         });
     }
 
@@ -19,13 +20,16 @@ const validateJWT = async (req = request, res = response, next)=>{
 
         if (!usuario){
             return res.status(400).json({
-                msg : "Token inválido - Usuario no se encuentra registrado en la base de datos"
+                msg : "Token inválido - Usuario no se encuentra registrado en la base de datos",
+                validToken : false
+
             });
         }
 
         if (!usuario.estado){
             return res.status(400).json({
-                msg : "Token inválido - Usuario se encuentra inactivo"
+                msg : "Token inválido - Usuario se encuentra inactivo",
+                validToken : false
             });
         }
 
@@ -36,7 +40,8 @@ const validateJWT = async (req = request, res = response, next)=>{
     } catch (error) {
         console.log(error);
         return res.status(400).json({
-            msg : "Token inválido"
+            msg : "Token inválido",
+            validToken : false
         })
     }
 }

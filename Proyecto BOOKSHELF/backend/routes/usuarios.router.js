@@ -13,7 +13,7 @@ router.get("/", getUsuarios);
 
 router.post("/", [
     check('usuario', 'El nombre es obligatorio').not().isEmpty(),
-    check('password', 'Debe tener minimo 6 caracteres').isLength({min : 6}),
+    check('password', 'La contraseña debe tener minimo 6 caracteres').isLength({min : 6}),
     check('email', 'El email no es válido').isEmail(),
     check('email').custom(existeEmail),
     check('rol').custom(isValidRol),

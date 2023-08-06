@@ -18,6 +18,11 @@ const reseñaSchema = mongoose.Schema({
     comentario : {
         type : String,
         required : true
+    },
+    estado : {
+        type : Boolean,
+        default : true,
+        enum : [true, false]
     }
 });
 

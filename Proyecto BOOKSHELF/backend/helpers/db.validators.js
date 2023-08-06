@@ -1,3 +1,5 @@
+import bcryptjs from "bcryptjs";
+
 import Rol from "../models/Rol.js";
 import Usuario from "../models/Usuario.js";
 import Favorito from "../models/Favorito.js";
@@ -34,9 +36,29 @@ const favoritoExiste = async (id)=>{
     }
 }
 
+const correoValido = async (email = '')=>{
+    const correoValido = await Usuario.findOne({email});
+
+    if (!correoValido){
+        throw new Error("Correo incorrecto");
+    }
+}
+
+const contraseñaValida = async (password = '', {req})=>{
+    const usuario = await Usuario.findOne({email : req.body.email});
+
+    const validPassword = bcryptjs.compareSync(password, usuario.password);
+
+    if (!validPassword){
+        throw new Error("Contraseña incorrecta");
+    }
+}
+
 export {
     isValidRol,
     existeEmail,
     usuarioExiste,
-    favoritoExiste
+    favoritoExiste,
+    correoValido,
+    contraseñaValida
 }

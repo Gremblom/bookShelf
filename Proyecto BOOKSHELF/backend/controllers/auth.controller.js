@@ -44,4 +44,18 @@ const login = async (req, res = response)=>{
     }
 }
 
-export default login;
+const verify = async (req, res)=>{
+    try {
+        res.json({
+            msg : "Usuario validado exitosamente",
+            validToken : true
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export {
+    login,
+    verify
+}
