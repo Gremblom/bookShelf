@@ -10,6 +10,18 @@ const getUsuarios = async (req, res)=>{
     }
 }
 
+const getUsuario = async (req, res)=>{
+    try {
+        const {id} = req.params;
+
+        const usuario = await Usuario.findOne({_id : id});
+
+        res.json(usuario);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const postUsuarios = async (req, res)=>{
     try {
         const {password} = req.body;
@@ -78,6 +90,7 @@ const updatePassword = async (req, res)=>{
 
 export {
     getUsuarios,
+    getUsuario,
     postUsuarios,
     deleteUsuario,
     updateUsuario,

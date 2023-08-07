@@ -10,6 +10,7 @@ import favRouter from "../routes/favoritos.router.js";
 import searchRouter from "../routes/search.router.js";
 import uploadRouter from "../routes/upload.router.js";
 import reseñaRouter from "../routes/reseñas.router.js";
+import amigosRouter from "../routes/amigos.router.js";
 
 class Server {
 
@@ -31,7 +32,8 @@ class Server {
             fav : "/fav",
             search : "/search",
             uploads : "/uploads",
-            reseñas : "/resenas"
+            reseñas : "/resenas",
+            amigos : "/amigos"
         }
         this.routes();
         this.port = process.env.PORT;
@@ -60,6 +62,7 @@ class Server {
         this.app.use(this.rutas.search, searchRouter);
         this.app.use(this.rutas.uploads, uploadRouter);
         this.app.use(this.rutas.reseñas, reseñaRouter);
+        this.app.use(this.rutas.amigos, amigosRouter);
     }
 }
 

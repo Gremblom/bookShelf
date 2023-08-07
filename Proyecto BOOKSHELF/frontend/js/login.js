@@ -3,10 +3,16 @@ import {login} from "../API/API.js";
 const formLogin = document.querySelector('#formLogin');
 
 async function authUser(usuario){
-    const jwt = await login(usuario);
+    const datos = await login(usuario);
 
-    localStorage.setItem("jwt", jwt);
-    window.location.href = "./home.html";
+    console.log(datos.errors);
+    if (datos.errors){
+        alert(datos.errors[0].msg);
+    } else {
+        localStorage.setItem("userId", datos.usuario._id);
+        localStorage.setItem("jwt", datos.token);
+        window.location.href = "./home.html";
+    }
 }
 
 function loginData(){

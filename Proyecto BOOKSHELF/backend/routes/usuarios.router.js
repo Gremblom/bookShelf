@@ -4,12 +4,14 @@ import {check} from "express-validator";
 import validateDocuments from "../middlewares/validateDocuments.js";
 import validateJWT from "../middlewares/validateJWT.js";
 import isAdmin from "../middlewares/validate.rol.js";
-import {deleteUsuario, getUsuarios, postUsuarios, updatePassword, updateUsuario} from "../controllers/usuarios.controller.js";
+import {deleteUsuario, getUsuarios, postUsuarios, updatePassword, updateUsuario, getUsuario} from "../controllers/usuarios.controller.js";
 import {existeEmail, isValidRol, usuarioExiste} from "../helpers/db.validators.js";
 
 const router = Router();
 
 router.get("/", getUsuarios);
+
+router.get("/:id", getUsuario);
 
 router.post("/", [
     check('usuario', 'El nombre es obligatorio').not().isEmpty(),

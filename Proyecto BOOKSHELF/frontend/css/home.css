@@ -63,6 +63,13 @@ body{
     row-gap: 2.5rem;
 }
 
+#leftSideNavBar ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 #leftSideNavBar ul li img{
     width: 2rem;
     height: 2rem;
@@ -114,6 +121,9 @@ body{
 #bestBooksContainer{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.5rem;
 }
 
 #bestScoreCard{
@@ -159,6 +169,7 @@ body{
 
 .bookTitle{
     display: flex;
+    margin: 0;
     justify-content: flex-start;
     font-size: 1.6rem;
 }
@@ -173,4 +184,11 @@ body{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 1.5rem;
+}
+
+button{
+    color: white;
+    background: linear-gradient(#A74444, #FF6868);;
+    border-width: 0;
+    border-radius: 0.3rem;
 }

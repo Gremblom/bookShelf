@@ -2,6 +2,16 @@ import {register} from "../API/API.js";
 
 const registerForm = document.querySelector('#registerForm');
 
+async function authRegister(registro){
+    const datos = await register(registro);
+
+    if (datos.errors){
+        datos.errors.forEach((error)=>{
+            alert(`${error.msg}`);
+        })
+    }
+}
+
 function loadRegisterObject(){
     const usuario = document.querySelector('#usuario').value;
     const email = document.querySelector('#email').value;
@@ -15,9 +25,9 @@ function loadRegisterObject(){
     }
 
     if (registro.usuario == "" || registro.email == "" || registro.password == ""){
-        return alert("Todos los campos son obligatorios")
+        return alert("Todos los campos son obligatorios");
     } else {
-        register(registro);
+        authRegister(registro);
     }
 }
 

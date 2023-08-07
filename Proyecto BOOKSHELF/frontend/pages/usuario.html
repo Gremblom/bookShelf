@@ -20,15 +20,16 @@
             <a href="./busqueda.html"><img src="../img/lupa.png" alt="logoletter.png"></a>
         </div>
         <div id="user">
-            <a href="usuario.html"><img src="../img/logoletter.png" alt="logoletter.png"></a>
+            
         </div>
     </section>
     <section class="home">
         <h1>BookShelf</h1>
         <div id="leftSideNavBar">
             <ul>
-                <li><img src="../img/guardado.png" alt="guardado.png"><a href="usuario.html">Guardados</a></li>
+                <li id="userFav"></li>
                 <li><img src="../img/friends.png" alt="amigos.png"><a href="usuario.html?friends=y">Amigos</a></li>
+                <li><button id="logOut">Logout</button></li>
             </ul>
         </div>
         <div id="Sponsors">
@@ -45,20 +46,20 @@
             </div>
             <div id="userInfo">
                 <div id="profilePicture">
-                    <img src="../img/logoletter.png" alt="profile picture.png">
+                    <img src="../img/profileDefault.png" alt="profile picture.png">
                 </div>
                 <div id="nameAndNavbar">
-                    <h1>Pepito Perez</h1>
+                    <h1 id="name">Pepito Perez</h1>
                     <div id="navBar">
                         <ul>
-                            <li><img src="../img/house.png" alt="home"></li>
-                            <li><img src="../img/friends.png" alt="home"></li>
+                            <li id="userHome"><img src="../img/house.png" alt="home"></li>
+                            <li id="userFriends"><img src="../img/friends.png" alt="home"></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cardsContainer">
+        <div class="cardsContainer" id="userCards">
         </div>
     </section>
     <section class="rightColumn">
@@ -66,8 +67,10 @@
             <img src="../img/guardado.png" alt="favoritos.png">
             <h2>Favoritos</h2>
         </div>
-        <div class="cardsContainer">
+        <div class="cardsContainer" id="favCards">
         </div>
     </section>
+    <script type="module" src="../js/verify.js"></script>
+    <script type="module" src="../js/usuario.js"></script>
 </body>
 </html>

@@ -7,7 +7,8 @@ const getReseñasUsuario = async (req, res)=>{
         const reseñas = await Reseña.find({
             "usuario" : {$in : [id]},
             "estado" : {$in : [true]}
-        });
+        })
+        .populate('libro', 'nombre');
 
         res.json(reseñas);
     } catch (error) {

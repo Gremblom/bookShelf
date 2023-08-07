@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs";
 import Rol from "../models/Rol.js";
 import Usuario from "../models/Usuario.js";
 import Favorito from "../models/Favorito.js";
+import Amigo from "../models/Amigo.js";
 
 const isValidRol = async (rol = '')=>{
     const existeRol = await Rol.findOne({rol});
@@ -36,6 +37,14 @@ const favoritoExiste = async (id)=>{
     }
 }
 
+const amistadExiste = async (id)=>{
+    const amistadExiste = await Amigo.findOne({_id : id});
+
+    if (!amistadExiste){
+        throw new Error("La amistad que estás tratando de borrar no existe");
+    }
+}
+
 const correoValido = async (email = '')=>{
     const correoValido = await Usuario.findOne({email});
 
@@ -60,5 +69,6 @@ export {
     usuarioExiste,
     favoritoExiste,
     correoValido,
-    contraseñaValida
+    contraseñaValida,
+    amistadExiste
 }
